@@ -64,4 +64,12 @@ public class AccountController {
         return ResponseEntity.ok(accountDto);
 //        return new ResponseEntity<>(accountServiceImplementation.getAccountsById(id), HttpStatus.OK);
     }
+
+    // Delete account
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteAccount(@PathVariable Long id){
+        accountServiceImplementation.deleteAccount(id);
+        return ResponseEntity.ok("Account is deleted successfully!");
+//        return new ResponseEntity<>(accountServiceImplementation.getAccountsById(id), HttpStatus.OK);
+    }
 }

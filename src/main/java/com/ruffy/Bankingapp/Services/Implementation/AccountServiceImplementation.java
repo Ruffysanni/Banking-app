@@ -45,8 +45,10 @@ public class AccountServiceImplementation implements AccountServiceInterface {
     }
 
     @Override
-    public AccountDto deleteAccount(Long id) {
-        return null;
+    public void deleteAccount(Long id) {
+        Account account = accountRepository.findById(id).orElseThrow(()-> new RuntimeException("Account does not exist"));
+        accountRepository.delete(account);
+
     }
 
     @Override

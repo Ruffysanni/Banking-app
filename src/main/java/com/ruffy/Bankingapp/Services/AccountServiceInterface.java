@@ -9,7 +9,7 @@ public interface AccountServiceInterface {
     List<AccountDto> getAllAccounts();
     AccountDto getAccountsById(Long id);
     AccountDto updateAccount(Long id, AccountDto accountDto);
-    AccountDto deleteAccount(Long id);
+    void deleteAccount(Long id);
     AccountDto depositToAccount(Long id, double amountToDeposit);
     AccountDto withDrawFromAccount(Long id, double amountToWithdraw);
 }
